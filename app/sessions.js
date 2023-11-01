@@ -6,6 +6,7 @@ const { getSession, commitSession, destroySession } =
       name: "__session",
       maxAge: 604_800,
       path: '/',
+        sameSite: "none"
     }
   });
 
