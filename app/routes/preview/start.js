@@ -13,7 +13,7 @@ export const action = async ({ request, params }) => {
   });
 };
 
-export const loader = async ({params}) => {
+export const loader = async ({request, params}) => {
   const session = await getSession(request.headers.get('Cookie'));
 
   session.set('preview', 'yes');
