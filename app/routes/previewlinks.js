@@ -22,6 +22,8 @@ export const action = async ({request}) => {
 
 
     const generatePreviewUrl = ({item, itemType, locale}) => {
+        console.log('item', item)
+        console.log('itemType', itemType)
         switch (itemType.attributes.api_key) {
             case 'post':
                 return `/posts/${item.attributes.slug}`;
