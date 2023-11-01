@@ -1,5 +1,6 @@
-export default function Serverless(req) {
+// From https://remix.run/docs/en/main/guides/resource-routes
 
+export const action = async ({request}) => {
 
     const baseUrl = process.env.VERCEL_URL
         // Vercel auto-populates this environment variable
@@ -17,7 +18,7 @@ export default function Serverless(req) {
         }
     }
 
-    const url = generatePreviewUrl(req.body);
+    const url = generatePreviewUrl(request.body);
 
     const previewLinks = [
         {
