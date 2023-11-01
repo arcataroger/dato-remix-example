@@ -1,4 +1,16 @@
 // From https://remix.run/docs/en/main/guides/resource-routes
+export const loader = async () => {
+    return new Response(null, {
+        status: 200,
+        headers: {
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Methods': 'POST, OPTIONS',
+            'Access-Control-Allow-Headers': 'Content-Type, Authorization',
+            'Content-Type': 'application/json',
+            'Content-Security-Policy': "frame-ancestors 'self' https://plugins-cdn.datocms.com"
+        },
+    })
+}
 
 export const action = async ({request}) => {
 
