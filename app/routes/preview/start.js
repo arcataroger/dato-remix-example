@@ -14,7 +14,7 @@ export const action = async ({ request, params }) => {
 };
 
 export const loader = async ({request}) => {
-  console.log('loader request', request)
+  console.log('start loader request', request)
   const session = await getSession(request.headers.get('Cookie'));
 
   session.set('preview', 'yes');

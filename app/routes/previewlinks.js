@@ -37,7 +37,7 @@ export const action = async ({request}) => {
     const previewLinks = [
         {
             label: 'Published version',
-            url: `${baseUrl}${url}`,
+            url: `${baseUrl}/preview/stop?redirect=${url}`,
         },
         {
             label: 'Draft version',
