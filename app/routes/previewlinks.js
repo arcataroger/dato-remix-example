@@ -13,9 +13,6 @@ export const loader = async () => {
 }
 
 export const action = async ({request}) => {
-
-    console.log('request', request)
-
     const baseUrl = process.env.VERCEL_URL
         // Vercel auto-populates this environment variable
         ? `https://${process.env.VERCEL_URL}`
@@ -34,7 +31,10 @@ export const action = async ({request}) => {
         }
     }
 
-    const url = generatePreviewUrl(request.body);
+    const requestPayload = await request.json();
+    console.log('requestPayload', requestPayload)
+
+    const url = generatePreviewUrl(requestPayload);
 
     const previewLinks = [
         {
