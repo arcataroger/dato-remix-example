@@ -13,12 +13,13 @@ export const action = async ({ request, params }) => {
   });
 };
 
-export const loader = async ({request, params}) => {
+export const loader = async ({request}) => {
+  console.log('loader request', request)
   const session = await getSession(request.headers.get('Cookie'));
 
   session.set('preview', 'yes');
 
-  return redirect(params.redirect ?? '/', {
+  return redirect(new URL(request.url).searchParams.get('redirect') ?? '/', {
     headers: {
       'Set-Cookie': await commitSession(session),
     },
