@@ -14,6 +14,8 @@ export const loader = async () => {
 
 export const action = async ({request}) => {
 
+    console.log('request', request)
+
     const baseUrl = process.env.VERCEL_URL
         // Vercel auto-populates this environment variable
         ? `https://${process.env.VERCEL_URL}`
